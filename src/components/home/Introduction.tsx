@@ -1,46 +1,77 @@
+ "use client";
+
+import { motion } from "framer-motion";
+import { Separator } from "@/components/ui/separator";
+
 export function Introduction() {
   return (
-    <section className="w-full section-padding bg-secondary/30">
-      <div className="container-width">
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Main heading with decorative elements */}
-          <div className="relative text-center mb-16">
-            <div className="absolute left-1/2 -translate-x-1/2 top-0 w-20 h-[1px] bg-primary" />
-            <h2 className="text-4xl md:text-5xl font-light mt-8 tracking-wide">
+    <section className="w-full py-24 bg-gradient-to-b from-secondary/20 to-background">
+      <div className="container px-4 md:px-6">
+        <motion.div 
+          className="max-w-4xl mx-auto rounded-2xl  backdrop-blur-sm shadow-sm"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          {/* Elegant header with refined decorative elements */}
+          <div className="relative flex flex-col items-center mb-16">
+            <Separator className="w-12 bg-primary" />
+            <h2 className="mt-8 font-cormorant text-4xl md:text-6xl font-light tracking-wide text-center">
               Welcome to{" "}
-              <span className="font-semibold text-primary">LUMIÈRE</span>
+              <span className="font-medium text-primary-600 drop-shadow-sm">LUMIÈRE</span>
             </h2>
           </div>
 
-          {/* Introduction paragraphs with elegant spacing */}
-          <div className="space-y-6 text-center md:text-left">
-            <p className="text-lg md:text-xl text-foreground/80 font-light">
+          {/* Enhanced content layout with improved typography */}
+          <div className="space-y-8 text-center">
+            <motion.p 
+              className="text-lg md:text-xl text-foreground/80 font-light leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+            >
               In a city of endless beauty options, finding consistently exceptional
               nail and lash services feels impossible. Too often, luxury prices
               come with rushed service and disappointing results.
-            </p>
+            </motion.p>
 
-            <p className="text-lg md:text-xl text-foreground/90 italic">
-              Why compromise with assembly-line treatments and impersonal service
-              when your self-care routine should be an experience to look forward
-              to?
-            </p>
+            <motion.div 
+              className="relative py-6 px-8 bg-primary/10 rounded-lg border border-primary/20"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+            >
+              <p className="text-xl md:text-2xl text-primary-700 font-cormorant italic leading-relaxed">
+                Why compromise with assembly-line treatments and impersonal service
+                when your self-care routine should be an experience to look forward
+                to?
+              </p>
+            </motion.div>
 
-            <p className="text-lg md:text-xl text-foreground">
+            <motion.p 
+              className="text-lg md:text-xl text-foreground leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+            >
               Welcome to{" "}
-              <span className="font-semibold">LUMIÈRE</span>, where we've
-              reimagined beauty services as an art form. Our master technicians
+              <span className="font-cormorant font-semibold text-primary-600">LUMIÈRE</span>,{" "}
+              where we've reimagined beauty services as an art form. Our master technicians
               take pride in creating bespoke experiences that transform not just
               your appearance, but your entire day.
-            </p>
+            </motion.p>
           </div>
 
-          {/* Decorative bottom element */}
-          <div className="flex justify-center pt-8">
-            <div className="w-16 h-[1px] bg-primary" />
+          {/* Refined decorative footer element */}
+          <div className="flex justify-center pt-12">
+            <Separator className="w-24 bg-primary" />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
-} 
+}

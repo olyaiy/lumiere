@@ -3,85 +3,93 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/24/outline';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const testimonials = [
+interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  quote: string;
+  image?: string;
+}
+
+const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sarah Johnson",
-    role: "Marketing Director",
-    company: "TechCorp",
-    quote: "The level of professionalism and attention to detail exceeded our expectations. The team delivered exactly what we needed, on time and within budget.",
-    // image: "/testimonials/sarah.jpg"
+    name: "Sarah Chen",
+    role: "Fashion Editor",
+    quote: "After years of salon-hopping, I've finally found my forever beauty destination. The attention to detail at LUMIÈRE is unmatched, and my lashes have never looked more natural yet dramatic. Worth every penny!",
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "CEO",
-    company: "InnovateX",
-    quote: "Working with this team has transformed our business operations. Their innovative solutions have helped us scale efficiently.",
-    // image: "/testimonials/michael.jpg"
+    name: "Michelle Wong",
+    role: "Executive Director",
+    quote: "The most luxurious nail experience in Vancouver. Their bio sculpture gel changed my life—my natural nails have never been stronger.",
   },
   {
     id: 3,
-    name: "Emma Williams",
-    role: "Product Manager",
-    company: "DesignHub",
-    quote: "The attention to user experience and design aesthetics was remarkable. Our customers love the final product.",
-    // image: "/testimonials/emma.jpg"
+    name: "Jessica Martinez",
+    role: "Beauty Influencer",
+    quote: "The attention to detail and personalized service at LUMIÈRE sets them apart. Their artists are true masters of their craft, creating looks that perfectly complement each client's unique features.",
   },
 ];
 
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const next = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-  };
+  const next = () => setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+  const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="w-full bg-gradient-to-b from-gray-50 to-white py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-            What Our Clients Say
+    <section className="relative bg-gradient-to-b from-background to-secondary/20 py-32">
+      <div className="absolute inset-0 bg-[url('/patterns/subtle-dots.png')] opacity-5" />
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div className="text-center mb-20">
+          <h2 className="font-cormorant text-5xl md:text-6xl text-soft-black mb-6">
+            Client Experiences
           </h2>
-          <p className="mt-4 text-lg text-gray-600">
-            Don't just take our word for it - hear from some of our satisfied clients
-          </p>
+          <div className="w-32 h-[1px] bg-primary mx-auto" />
         </div>
 
-        <div className="relative">
+        <div className="relative px-4">
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
               className="flex flex-col items-center"
             >
-              <div className="w-full max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8">
-                <div className="flex flex-col items-center">
-                  <div className="w-20 h-20 rounded-full bg-gray-200 mb-4">
-                    {/* <img
-                      src={testimonials[currentIndex].image}
-                      alt={testimonials[currentIndex].name}
-                      className="w-20 h-20 rounded-full object-cover"
-                    /> */}
-                  </div>
-                  <blockquote className="text-xl text-gray-700 text-center italic mb-6">
-                    "{testimonials[currentIndex].quote}"
-                  </blockquote>
-                  <div className="text-center">
-                    <div className="font-semibold text-gray-900">
-                      {testimonials[currentIndex].name}
-                    </div>
-                    <div className="text-gray-600">
-                      {testimonials[currentIndex].role} at {testimonials[currentIndex].company}
+              <div className="w-full max-w-3xl mx-auto">
+                <div className="relative bg-white/80 backdrop-blur-md rounded-2xl p-12 md:p-16 shadow-xl">
+                  {/* Decorative elements */}
+                  <div className="absolute top-0 left-0 w-24 h-24 border-l-2 border-t-2 border-primary/20 rounded-tl-2xl -translate-x-2 -translate-y-2" />
+                  <div className="absolute bottom-0 right-0 w-24 h-24 border-r-2 border-b-2 border-primary/20 rounded-br-2xl translate-x-2 translate-y-2" />
+                  
+                  <span className="absolute text-9xl font-cormorant text-primary/10 -top-8 -left-4">"</span>
+                  
+                  <div className="relative z-10 space-y-8">
+                    <blockquote className="text-2xl md:text-3xl text-foreground font-cormorant leading-relaxed italic">
+                      {testimonials[currentIndex].quote}
+                    </blockquote>
+
+                    <div className="flex items-center gap-4 pt-6 border-t border-primary/10">
+                      <Avatar className="w-16 h-16">
+                        <AvatarImage src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
+                        <AvatarFallback className="bg-primary/5 text-primary text-lg">
+                          {testimonials[currentIndex].name.split(' ').map(n => n[0]).join('')}
+                        </AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <div className="font-montserrat text-lg font-medium text-soft-black">
+                          {testimonials[currentIndex].name}
+                        </div>
+                        <div className="font-nunito text-muted-foreground">
+                          {testimonials[currentIndex].role}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -89,30 +97,34 @@ export function Testimonials() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between">
+          {/* Navigation */}
+          <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between items-center px-4">
             <button
               onClick={prev}
-              className="transform -translate-x-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all"
+              className="group bg-white/80 backdrop-blur-sm p-4 rounded-full shadow-lg border border-primary/10 transition-all hover:bg-primary/5"
               aria-label="Previous testimonial"
             >
-              <ChevronLeftIcon className="w-6 h-6 text-gray-600" />
+              <ChevronLeftIcon className="w-6 h-6 text-primary transition-transform group-hover:-translate-x-1" />
             </button>
             <button
               onClick={next}
-              className="transform translate-x-4 bg-white p-2 rounded-full shadow-lg hover:bg-gray-50 transition-all"
+              className="group bg-white/80 backdrop-blur-sm p-4 rounded-full shadow-lg border border-primary/10 transition-all hover:bg-primary/5"
               aria-label="Next testimonial"
             >
-              <ChevronRightIcon className="w-6 h-6 text-gray-600" />
+              <ChevronRightIcon className="w-6 h-6 text-primary transition-transform group-hover:translate-x-1" />
             </button>
           </div>
 
-          <div className="mt-8 flex justify-center space-x-2">
+          {/* Indicators */}
+          <div className="mt-12 flex justify-center gap-3">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  index === currentIndex ? 'bg-gray-800' : 'bg-gray-300'
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentIndex 
+                    ? 'w-8 bg-primary' 
+                    : 'w-4 bg-primary/20 hover:bg-primary/30'
                 }`}
                 aria-label={`Go to testimonial ${index + 1}`}
               />

@@ -23,7 +23,7 @@ export default function Hero() {
     <section className="relative w-full h-screen overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/images/hero-bg.jpg" // Add a luxury salon image
+        src="/hero-bg.jpg" // Add a luxury salon image
         alt="LUMIÈRE Salon Interior"
         fill
         priority

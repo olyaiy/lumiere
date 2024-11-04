@@ -17,12 +17,41 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { format } from "date-fns";
+import { format, setHours, setMinutes } from "date-fns";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { artists } from "@/components/home/Artists";
+
+interface TimeSlot {
+  hour: number;
+  minute: number;
+  label: string;
+}
+
+const timeSlots: TimeSlot[] = [
+  { hour: 10, minute: 0, label: "10:00 AM" },
+  { hour: 10, minute: 30, label: "10:30 AM" },
+  { hour: 11, minute: 0, label: "11:00 AM" },
+  { hour: 11, minute: 30, label: "11:30 AM" },
+  { hour: 12, minute: 0, label: "12:00 PM" },
+  { hour: 12, minute: 30, label: "12:30 PM" },
+  { hour: 13, minute: 0, label: "1:00 PM" },
+  { hour: 13, minute: 30, label: "1:30 PM" },
+  { hour: 14, minute: 0, label: "2:00 PM" },
+  { hour: 14, minute: 30, label: "2:30 PM" },
+  { hour: 15, minute: 0, label: "3:00 PM" },
+  { hour: 15, minute: 30, label: "3:30 PM" },
+  { hour: 16, minute: 0, label: "4:00 PM" },
+  { hour: 16, minute: 30, label: "4:30 PM" },
+  { hour: 17, minute: 0, label: "5:00 PM" },
+  { hour: 17, minute: 30, label: "5:30 PM" },
+  { hour: 18, minute: 0, label: "6:00 PM" },
+  { hour: 18, minute: 30, label: "6:30 PM" },
+];
 
 export function Booking() {
   const [date, setDate] = useState<Date>();
+  const [selectedTime, setSelectedTime] = useState<string>();
 
   return (
     <section className="w-full bg-card py-24">
@@ -93,6 +122,32 @@ export function Booking() {
                   />
                 </PopoverContent>
               </Popover>
+
+              <Select value={selectedTime} onValueChange={setSelectedTime}>
+                <SelectTrigger className="border-primary/20 focus:border-primary">
+                  <SelectValue placeholder="Select time" />
+                </SelectTrigger>
+                <SelectContent>
+                  {timeSlots.map((slot) => (
+                    <SelectItem key={slot.label} value={slot.label}>
+                      {slot.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+
+              <Select>
+                <SelectTrigger className="border-primary/20 focus:border-primary">
+                  <SelectValue placeholder="Select artist" />
+                </SelectTrigger>
+                <SelectContent>
+                  {artists.map((artist) => (
+                    <SelectItem key={artist.id} value={artist.id.toString()}>
+                      {artist.name} - {artist.role}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
 
               <Textarea
                 placeholder="Special requests or notes"

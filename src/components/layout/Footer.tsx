@@ -10,24 +10,24 @@ interface SocialLink {
 const socialLinks: SocialLink[] = [
   {
     icon: <Instagram className="h-5 w-5" />,
-    href: "https://instagram.com/lumierestudio",
+    href: "www.hightidedigital.ca",
     label: "Instagram",
   },
   {
     icon: <Facebook className="h-5 w-5" />,
-    href: "https://facebook.com/lumierestudio",
+    href: "www.hightidedigital.ca",
     label: "Facebook",
   },
   {
     icon: <Mail className="h-5 w-5" />,
-    href: "mailto:hello@lumierestudio.ca",
+    href: "www.hightidedigital.ca",
     label: "Email",
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="w-full bg-card px-4 py-16 mt-20">
+    <footer className="w-full bg-card px-4 py-16 mt-0">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 text-center">
           {/* Location Section */}
