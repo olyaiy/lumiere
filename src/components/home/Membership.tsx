@@ -12,6 +12,7 @@ import {
   Crown,
   Percent
 } from "lucide-react"
+import Image from "next/image"
 
 const membershipBenefits = [
   {
@@ -100,19 +101,19 @@ export function Membership() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <div className="relative aspect-[4/5] bg-muted rounded-2xl overflow-hidden">
+          <div className="relative aspect-square bg-muted rounded-2xl overflow-hidden">
             {/* Image placeholder with gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            {/* 
+            
             <Image
-              src="/images/membership-luxury.webp"
+              src="/membership.jpg"
               alt="LUMIÈRE luxury membership experience"
               fill
               className="object-cover transition-transform duration-700 hover:scale-105"
               sizes="(max-width: 768px) 100vw, 50vw"
               priority
             /> 
-            */}
+           
           </div>
           
           <div className="space-y-8">

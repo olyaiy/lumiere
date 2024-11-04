@@ -41,7 +41,7 @@ export function Testimonials() {
   const prev = () => setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="relative bg-gradient-to-b from-background to-secondary/20 py-32">
+    <section className="relative bg-gradient-to-b from-background to-secondary/20 py-8">
       <div className="absolute inset-0 bg-[url('/patterns/subtle-dots.png')] opacity-5" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">

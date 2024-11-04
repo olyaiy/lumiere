@@ -20,7 +20,7 @@ const heroButtons = [
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full min-h-[100vh] md:h-[90vh] overflow-hidden">
       {/* Background Image */}
       <Image
         src="/hero-bg.jpg" // Add a luxury salon image
@@ -34,39 +34,39 @@ export default function Hero() {
       {/* Gradient Overlay - adjusted for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1B2C41]/85 to-[#232323]/90" />
 
-      {/* Hero Content */}
-      <div className="relative flex h-full items-center justify-center px-4 -mt-20">
+      {/* Hero Content - Fixed container and spacing */}
+      <div className="relative h-full flex items-center justify-center px-4 py-20 md:py-0">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center w-full"
+          className="container mx-auto flex flex-col items-center justify-center"
         >
-          {/* Social Proof - Adjusted positioning and sizes */}
+          {/* Social Proof - Improved spacing */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-6 md:mb-12"
+            className="w-full mb-8 md:mb-12"
           >
-            <div className="flex flex-row items-center justify-evenly mt-16 gap-8 md:gap-0">
+            <div className="flex items-center justify-center gap-6 md:gap-12 ">
               {socialProofData.map((item, index) => (
                 <motion.div 
-                  key={index} 
+                  key={index}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.7 + (index * 0.2) }}
                   className="flex flex-col items-center"
                 >
-                  <div className="flex items-center gap-2 mb-2 justify-center ">
+                  <div className="flex items-center gap-1 md:gap-2 mb-1 ">
                     {item.label.includes("Rating") && (
-                      <StarIcon className="md:w-6 md:h-6 w-4 h-4 text-[#DAB17A] fill-[#DAB17A]" />
+                      <StarIcon className="w-4 h-4 md:w-5 md:h-5 text-[#DAB17A] fill-[#DAB17A]" />
                     )}
                     <span className="font-cormorant text-2xl md:text-3xl text-[#F8F6F4] ">
                       {item.number}
                     </span>
                   </div>
-                  <span className="font-montserrat text-xs md:text-sm text-[#F8F6F4]/70 tracking-wider uppercase">
+                  <span className="font-montserrat text-xs md:text-sm text-[#F8F6F4]/70 tracking-wider uppercase  text-center">
                     {item.label}
                   </span>
                 </motion.div>
@@ -74,50 +74,54 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Decorative Line */}
+          {/* Main Content - Improved spacing and responsiveness */}
           <motion.div 
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
             transition={{ duration: 1, delay: 1 }}
-            className="h-[1px] bg-[#DAB17A] mx-auto mb-8"
+            className="h-[1px] bg-[#DAB17A] mx-auto mb-8 md:mb-10"
           />
           
-          <div className="mb-4">
-            <h2 className="font-cormorant text-2xl md:text-3xl text-[#F8F6F4]/90 tracking-wider">
+          <div className="text-center max-w-[90%] md:max-w-4xl mx-auto">
+            <h2 className="font-cormorant text-2xl md:text-3xl text-[#F8F6F4]/90 tracking-wider mb-4">
               Experience the LUMIÈRE Difference
             </h2>
-          </div>
-          <h1 className="font-cormorant text-5xl md:text-7xl lg:text-8xl text-[#F8F6F4] mb-6 tracking-tight">
-            Where Artistry<br />Meets Luxury
-          </h1>
-          <p className="font-nunito text-lg md:text-xl text-[#F8F6F4]/90 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Discover Vancouver's most sought-after nail and lash atelier, where master artists create bespoke beauty experiences in our serene Yaletown sanctuary.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            {heroButtons.map((button) => (
-              <Link key={button.name} href={button.href}>
-                <Button 
-                  size="lg"
-                  variant={button.isPrimary ? "default" : "outline"}
-                  className={cn(
-                    "font-montserrat transition-all duration-300",
-                    button.isPrimary 
-                      ? "bg-[#DAB17A] hover:bg-[#DAB17A]/90 text-white text-xl py-7 px-12 hover:shadow-lg"
-                      : "border-[#DAB17A] text-[#DAB17A] hover:bg-[#DAB17A]/10 text-lg py-6 px-10"
-                  )}
-                >
-                  {button.name}
-                </Button>
-              </Link>
-            ))}
+            
+            <h1 className="font-cormorant text-5xl md:text-7xl lg:text-8xl text-[#F8F6F4] mb-6 tracking-tight">
+              Where Artistry<br />Meets Luxury
+            </h1>
+            
+            <p className="font-nunito text-lg md:text-xl text-[#F8F6F4]/90 mb-10 leading-relaxed">
+              Discover Vancouver's most sought-after nail and lash atelier, where master artists create bespoke beauty experiences in our serene Yaletown sanctuary.
+            </p>
+
+            {/* Buttons - Improved responsive layout */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
+              {heroButtons.map((button) => (
+                <Link key={button.name} href={button.href} className="w-full sm:w-auto">
+                  <Button 
+                    size="lg"
+                    variant={button.isPrimary ? "default" : "outline"}
+                    className={cn(
+                      "font-montserrat transition-all duration-300 w-full sm:w-auto min-w-[200px]",
+                      button.isPrimary 
+                        ? "bg-[#DAB17A] hover:bg-[#DAB17A]/90 text-white text-base md:text-lg py-6 px-8"
+                        : "border-[#DAB17A] text-[#DAB17A] hover:bg-[#DAB17A]/10 text-sm md:text-base py-5 px-6"
+                    )}
+                  >
+                    {button.name}
+                  </Button>
+                </Link>
+              ))}
+            </div>
           </div>
 
-          {/* Scroll Indicator - adjusted positioning */}
+          {/* Scroll Indicator - Improved visibility control */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="absolute bottom-0  left-0 right-0 mx-auto w-full flex flex-col items-center gap-2"
+            className="absolute bottom-8 left-0 right-0 mx-auto w-full hidden md:flex flex-col items-center gap-2"
           >
             <span className="text-[#F8F6F4]/70 text-sm tracking-wider font-montserrat">
               Scroll to Explore
