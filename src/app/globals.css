@@ -1,0 +1,115 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,300;6..12,400;6..12,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* LUMIÈRE Color System */
+    --background: 40 33% 96%; /* Pearl White #F8F6F4 */
+    --foreground: 213 41% 18%; /* Deep Navy #1B2C41 */
+    
+    --primary: 35 47% 67%; /* Champagne Gold #DAB17A */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 15 33% 92%; /* Blush Pink #F3E6E3 */
+    --secondary-foreground: 213 41% 18%;
+    
+    --muted: 96 19% 83%; /* Muted Sage #D4DCCD */
+    --muted-foreground: 213 41% 18%;
+    
+    --accent: 0 0% 96%; /* Light Grey #F5F5F5 */
+    --accent-foreground: 213 41% 18%;
+    
+    --card: 36 50% 98%; /* Warm White #FDFBF9 */
+    --card-foreground: 213 41% 18%;
+    
+    --popover: 36 50% 98%;
+    --popover-foreground: 213 41% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 47% 67%;
+    --input: 35 47% 67%;
+    --ring: 35 47% 67%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    /* Dark mode values preserved for future use */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer components {
+  /* Spacing System */
+  .section-padding {
+    @apply py-20; /* 80px top/bottom */
+  }
+
+  .container-width {
+    @apply max-w-[1200px] mx-auto px-4;
+  }
+
+  /* Button Styles */
+  .btn-primary {
+    @apply bg-primary text-white px-8 py-4 rounded hover:opacity-90 transition-all duration-300;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-primary text-primary px-8 py-4 rounded hover:bg-primary/10 transition-all duration-300;
+  }
+
+  /* Card Styles */
+  .lumiere-card {
+    @apply bg-white rounded-lg p-8 shadow-[0_4px_20px_rgba(0,0,0,0.05)];
+  }
+}

@@ -1,0 +1,401 @@
+**Project Overview:**
+
+Design and develop a stunning, responsive, and mobile-friendly website for **LUMIÈRE**, Vancouver's premier nail and lash atelier located in Yaletown. The website should embody luxury and artistry, providing an exceptional user experience that reflects the brand's identity.
+
+**Technical Stack:**
+
+- **Frameworks/Libraries:** Next.js, Shadcn UI
+- **Styling:** Tailwind CSS
+- **Language:** TypeScript
+
+**Project Structure:**
+
+```
+src/
+├── app/
+│   ├── layout.tsx
+│   └── page.tsx
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Navigation.tsx
+│   │   └── EmergencyBanner.tsx
+│   ├── home/
+│   │   ├── Hero.tsx
+│   │   ├── Introduction.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Services.tsx
+│   │   ├── Artists.tsx
+│   │   ├── Testimonials.tsx
+│   │   ├── Membership.tsx
+│   │   └── Booking.tsx
+│   ├── shared/
+│   │   ├── Button.tsx
+│   │   ├── ServiceCard.tsx
+│   │   ├── TestimonialCard.tsx
+│   │   ├── ArtistCard.tsx
+│   │   └── BookingForm.tsx
+│   └── floating/
+│       ├── FloatingButton.tsx
+│       └── PromotionsBanner.tsx
+├── types/
+│   └── index.ts
+├── utils/
+│   └── constants.ts
+└── styles/
+    └── globals.css
+```
+
+**Design Guidelines:**
+
+- Ensure the website is **beautiful**, **impressive**, **responsive**, and **mobile-friendly**.
+- Follow the **LUMIÈRE Design System** closely to maintain brand consistency.
+- Implement smooth navigation and intuitive layouts to enhance user experience.
+- Incorporate all special features and micro-interactions as described.
+
+---
+
+### **Full Website Copy:**
+
+*(Include all text content as provided, maintaining headings, sections, and formatting.)*
+
+---
+
+#### **[Hero Section]**
+
+# Experience the LUMIÈRE Difference: Where Artistry Meets Luxury
+
+Discover Vancouver's most sought-after nail and lash atelier, where master artists create bespoke beauty experiences in our serene Yaletown sanctuary.
+
+**[Book Your Experience]**  **[View Services]**
+
+---
+
+#### **[Introduction Section]**
+
+In a city of endless beauty options, finding consistently exceptional nail and lash services feels impossible. Too often, luxury prices come with rushed service and disappointing results.
+
+Why compromise with assembly-line treatments and impersonal service when your self-care routine should be an experience to look forward to?
+
+Welcome to **LUMIÈRE**, where we've reimagined beauty services as an art form. Our master technicians take pride in creating bespoke experiences that transform not just your appearance, but your entire day.
+
+---
+
+#### **[Experience Section]**
+
+## The LUMIÈRE Experience
+
+### Elevated Environment
+
+Step into a space designed for tranquility. Our private treatment stations ensure your comfort and privacy, while our thoughtfully curated amenities transform every visit into a retreat.
+
+### Unrushed Artistry
+
+We believe beauty takes time. Every appointment is given extended time to ensure perfection, with no double-booking. Your artist focuses solely on creating your perfect look.
+
+### Impeccable Standards
+
+Medical-grade sterilization, single-use implements, and premium products are non-negotiable. Your safety and satisfaction are our highest priorities.
+
+**[Book Your Experience]**
+
+---
+
+#### **[Services Section]**
+
+## Our Signature Services
+
+### Luxury Lash Artistry
+
+- **Classic Full Set | $200**  
+  The perfect natural enhancement
+- **Volume Full Set | $250**  
+  Dramatic, customized fullness
+- **Mega Volume | $300**  
+  The ultimate in luxury lashes
+
+### Nail Couture
+
+- **Signature Gel Manicure | $75**  
+  Long-wearing luxury for your hands
+- **Art & Design | $95+**  
+  Custom nail artistry
+- **Bio Sculpture Gel | $85**  
+  Strength meets sophistication
+
+**[View Full Service Menu]**
+
+---
+
+#### **[Artist Section]**
+
+## Meet Our Master Artists
+
+Our artists are among the top 1% in their field, with international certification and continuous advanced training. Each specialist brings years of expertise and an eye for personalized beauty.
+
+**[Team member cards with credentials]**
+
+---
+
+#### **[Testimonial Section]**
+
+## Client Experiences
+
+*"After years of salon-hopping, I've finally found my forever beauty destination. The attention to detail at LUMIÈRE is unmatched, and my lashes have never looked more natural yet dramatic. Worth every penny!"*  
+— **Sarah Chen**, Fashion Editor
+
+*"The most luxurious nail experience in Vancouver. Their bio sculpture gel changed my life—my natural nails have never been stronger."*  
+— **Michelle Wong**, Executive Director
+
+**[More Reviews]**
+
+---
+
+#### **[Membership Section]**
+
+## The LUMIÈRE Membership
+
+Join our exclusive membership program and enjoy:
+
+- Priority booking
+- Complimentary touch-ups
+- Member-only events
+- Seasonal gifts
+- Birthday month specials
+
+**[Learn More About Membership]**
+
+---
+
+#### **[Booking Section]**
+
+## Book Your Experience
+
+Transform your beauty routine into a luxury experience.
+
+**[Online Booking Form]**
+
+First-time clients: Mention "WELCOME" for a complimentary hand treatment with your service.
+
+Love your results or your next service is complimentary.
+
+---
+
+#### **[Footer Section]**
+
+### Location
+
+1234 Hamilton Street  
+Yaletown, Vancouver BC  
+V6B 2S8
+
+### Hours
+
+- **Tuesday - Friday:** 10am - 7pm
+- **Saturday:** 9am - 6pm
+- **Sunday:** 11am - 5pm
+- **Monday:** Closed
+
+### Contact
+
+- **Book Online:** [Booking Link]
+- **Phone:** (604) 555-0123
+- **Email:** hello@lumierestudio.ca
+
+**[Social Media Icons]**
+
+---
+
+#### **[Floating Elements]**
+
+- **Book Now** (Sticky Button)
+- **Gift Cards Available**
+- **Instagram Feed**
+- **Current Promotions**
+
+**[Legal Footer]**
+
+© 2024 LUMIÈRE Studio  
+Privacy Policy | Terms of Service | Cancellation Policy
+
+---
+
+**Note:**
+
+- All prices in CAD. 24-hour cancellation policy applies.
+- We require a credit card to secure your booking.
+- Complimentary consultations available for first-time clients.
+
+**[Emergency Banner]**
+
+Now accepting new clients. Book your holiday appointments early to secure your preferred time.
+
+---
+
+### **LUMIÈRE Design System**
+
+#### **Color Palette**
+
+- **Primary Colors:**
+  - **Pearl White (#F8F6F4):** Main background
+  - **Champagne Gold (#DAB17A):** Accents and CTAs
+  - **Deep Navy (#1B2C41):** Primary text
+  - **Soft Black (#232323):** Headers
+
+- **Secondary Colors:**
+  - **Blush Pink (#F3E6E3):** Subtle backgrounds
+  - **Muted Sage (#D4DCCD):** Secondary accents
+  - **Light Grey (#F5F5F5):** Cards and sections
+  - **Warm White (#FDFBF9):** Secondary background
+
+  - **Snippet from the globals.css file:**
+   /* LUMIÈRE Color System */
+    --background: 40 33% 96%; /* Pearl White #F8F6F4 */
+    --foreground: 213 41% 18%; /* Deep Navy #1B2C41 */
+    
+    --primary: 35 47% 67%; /* Champagne Gold #DAB17A */
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 15 33% 92%; /* Blush Pink #F3E6E3 */
+    --secondary-foreground: 213 41% 18%;
+    
+    --muted: 96 19% 83%; /* Muted Sage #D4DCCD */
+    --muted-foreground: 213 41% 18%;
+    
+    --accent: 0 0% 96%; /* Light Grey #F5F5F5 */
+    --accent-foreground: 213 41% 18%;
+    
+    --card: 36 50% 98%; /* Warm White #FDFBF9 */
+    --card-foreground: 213 41% 18%;
+    
+    --popover: 36 50% 98%;
+    --popover-foreground: 213 41% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 35 47% 67%;
+    --input: 35 47% 67%;
+    --ring: 35 47% 67%;
+
+    --radius: 0.5rem;
+
+#### **Typography**
+
+- **Headings:**
+  - **Primary:** "Cormorant Garamond" (Elegant serif for main headlines)
+  - **Secondary:** "Montserrat" (Clean sans-serif for sub-headings)
+
+- **Body Text:**
+  - "Nunito Sans" (Luxurious yet readable sans-serif)
+  - **Line Height:** 1.6
+  - **Letter Spacing:** 0.02em
+
+#### **Spacing System**
+
+- **Base Unit:** 8px
+- **Section Padding:** 80px (Top/Bottom)
+- **Container Max-Width:** 1200px
+- **Grid Gap:** 24px
+
+#### **UI Elements**
+
+- **Buttons**
+
+  - **Primary:**
+    - Background: Champagne Gold
+    - Text: White
+    - Hover: Subtle animation
+    - Corners: Rounded (4px)
+    - Padding: 16px 32px
+
+  - **Secondary:**
+    - Background: Transparent
+    - Border: Gold
+    - Text: Gold
+    - Hover: Light gold background
+
+- **Cards**
+
+  - Shadow: Soft (0 4px 20px rgba(0,0,0,0.05))
+  - Border Radius: 8px
+  - Background: White
+  - Padding: 32px
+
+- **Navigation**
+
+  - Header: Sticky, transparent
+  - Background on Scroll: White
+  - Design: Minimal with centered logo
+  - Mobile: Hamburger menu
+
+#### **Special Elements**
+
+- **Service Price Cards**
+
+  - Design: Clean white cards
+  - Price Tag: Gold
+  - Hover Effect: Slight lift
+  - Additional Info: Service duration in subtle text
+
+- **Artist Profiles**
+
+  - Images: Circular
+  - Hover: Overlay effect
+  - Text: Credentials in elegant typography
+  - Links: Social icons in gold
+
+- **Testimonial Blocks**
+
+  - Quotation Marks: Large, gold
+  - Text: Italicized testimonial
+  - Author Info: Small photo, name, title
+  - Background: Subtle pattern
+
+#### **Imagery Style**
+
+- Photography: High-contrast professional images
+- Lighting: Soft, warm
+- Editing: Minimal
+- Focus: Hands and eyes
+- Consistency: Uniform color grading
+
+#### **Micro-interactions**
+
+- Behavior: Smooth scroll
+- Animations: Subtle hovers, gold loading indicators
+- Forms: Animated field interactions
+
+#### **Mobile Considerations**
+
+- Navigation: Simplified
+- Touch Targets: Larger
+- Layouts: Stacked
+- Buttons: Full-width
+- Animations: Reduced for performance
+
+#### **Special Features**
+
+- **Instagram Feed:** Grid layout with hover effects
+- **Floating Booking Button**
+- **Newsletter Popup:** Elegant design, easy dismissal
+
+---
+
+- Use the **project structure** to organize files and components appropriately.
+- Implement the **full website copy** into the designated sections without alterations to the content.
+- Adhere strictly to the **LUMIÈRE Design System** for all styling and design choices.
+- Ensure that all pages are **responsive** and display correctly on various devices and screen sizes.
+- Incorporate **special features** and **micro-interactions** to enhance user engagement.
+- Optimize images and assets for web performance without compromising quality.
+- Validate all forms and ensure accessibility compliance (e.g., alt text for images, ARIA labels).
+
+---
+
+**Objective:**
+
+Create a website that not only showcases LUMIÈRE's services and brand ethos but also provides users with an immersive online experience that mirrors the luxury and artistry they can expect in-person.
+
+
+
