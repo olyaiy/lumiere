@@ -73,14 +73,14 @@ export function Header() {
           {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger 
-              className="lg:hidden transition-colors"
+              className="lg:hidden transition-colors border-none"
               aria-label="Menu"
             >
-              <Menu className="h-6 w-6 text-primary" />
+              <Menu className="h-6 w-6 text-primary b-none" />
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-full h-full bg-card/98 backdrop-blur-md border-l border-border"
+              className="w-full h-full bg-card/98 backdrop-blur-md border-l border-none"
             >
               <SheetHeader className="absolute top-6 left-6">
                 <SheetTitle className="font-cormorant text-2xl font-medium tracking-wider text-primary text-left">
