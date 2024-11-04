@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -51,7 +51,7 @@ export function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
@@ -70,36 +70,34 @@ export function Header() {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu */}
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger 
-              className={cn(
-                "md:hidden transition-colors",
-                isScrolled ? "text-foreground" : "text-primary"
-              )} 
+              className="lg:hidden transition-colors"
               aria-label="Menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
+              <Menu className="h-6 w-6 text-primary" />
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-full bg-background/98 backdrop-blur-md"
+              className="w-full h-full bg-card/98 backdrop-blur-md border-l border-border"
             >
-              <div className="flex flex-col gap-8 mt-16">
+              <SheetHeader className="absolute top-6 left-6">
+                <SheetTitle className="font-cormorant text-2xl font-medium tracking-wider text-primary text-left">
+                  LUMIÈRE
+                </SheetTitle>
+              </SheetHeader>
+              <div className="h-full flex flex-col items-center justify-center gap-8">
                 {navigation.map((item) => (
                   <Link
                     key={item.name}
                     href={item.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className={cn(
-                      "font-montserrat text-lg tracking-wide transition-all",
+                      "font-montserrat text-lg tracking-wide transition-all text-center",
                       item.name === "Book Now"
                         ? "bg-primary text-white hover:bg-primary/90 px-6 py-2 rounded-md inline-block"
-                        : "hover:text-primary"
+                        : "text-primary hover:text-primary/80"
                     )}
                   >
                     {item.name}

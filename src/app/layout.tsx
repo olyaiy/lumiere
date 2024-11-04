@@ -7,14 +7,16 @@ import { Header } from "@/components/layout/Header";
 // Primary heading font
 const cormorantGaramond = Cormorant_Garamond({
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
 });
 
 // Secondary heading font
 const montserrat = Montserrat({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
   variable: "--font-montserrat",
   display: "swap",
 });
@@ -22,6 +24,7 @@ const montserrat = Montserrat({
 // Body text font
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
+  weight: ["300", "400", "600"],
   variable: "--font-nunito",
   display: "swap",
 });
@@ -57,12 +60,12 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body
         className={`${cormorantGaramond.variable} ${montserrat.variable} ${nunitoSans.variable} font-nunito antialiased bg-background text-foreground`}
+        suppressHydrationWarning
       >
         <Header />
-        <main className="min-h-screen">
-          {children}
-        </main>
+        <main className="min-h-screen">{children}</main>
         <Footer />
+        {/* <FontLoadingScript /> */}
       </body>
     </html>
   );
