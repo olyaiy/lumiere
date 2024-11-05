@@ -34,20 +34,20 @@ export default function Hero() {
       {/* Gradient Overlay - adjusted for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#1B2C41]/85 to-[#232323]/90" />
 
-      {/* Hero Content - Fixed container and spacing */}
-      <div className="relative h-full flex items-center justify-center px-4 py-20 md:py-0">
+      {/* Hero Content - Adjusted container and spacing */}
+      <div className="relative h-full flex items-center justify-center px-4 py-20 md:py-0  ">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="container mx-auto flex flex-col items-center justify-center"
+          className=" container mx-auto flex flex-col items-center justify-center md:justify-start"
         >
-          {/* Social Proof - Improved spacing */}
+          {/* Social Proof - Reduced bottom margin on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="w-full mb-8 md:mb-12"
+            className="w-full mb-8 md:mb-8"
           >
             <div className="flex items-center justify-center gap-6 md:gap-12 ">
               {socialProofData.map((item, index) => (
@@ -74,20 +74,20 @@ export default function Hero() {
             </div>
           </motion.div>
 
-          {/* Main Content - Improved spacing and responsiveness */}
+          {/* Main Content - Adjusted spacing and heading sizes */}
           <motion.div 
             initial={{ width: 0 }}
             animate={{ width: "100px" }}
             transition={{ duration: 1, delay: 1 }}
-            className="h-[1px] bg-[#DAB17A] mx-auto mb-8 md:mb-10"
+            className="h-[1px] bg-[#DAB17A] mx-auto mb-6 md:mb-8"
           />
           
           <div className="text-center max-w-[90%] md:max-w-4xl mx-auto">
-            <h2 className="font-cormorant text-2xl md:text-3xl text-[#F8F6F4]/90 tracking-wider mb-4">
+            <h2 className="font-cormorant text-2xl md:text-3xl text-[#F8F6F4]/90 tracking-wider mb-3 md:mb-4">
               Experience the LUMIÈRE Difference
             </h2>
             
-            <h1 className="font-cormorant text-5xl md:text-7xl lg:text-8xl text-[#F8F6F4] mb-6 tracking-tight">
+            <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl text-[#F8F6F4] mb-4 md:mb-20 md:mt-10 tracking-tight">
               Where Artistry<br />Meets Luxury
             </h1>
             
