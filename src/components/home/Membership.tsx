@@ -18,32 +18,32 @@ const membershipBenefits = [
   {
     icon: Calendar,
     title: "Priority Booking",
-    description: "Secure your preferred appointment times with exclusive early access"
+    description: "Skip the waitlist and secure prime appointment times before they're publicly available"
   },
   {
     icon: Sparkles,
     title: "Complimentary Touch-ups",
-    description: "Enjoy free touch-up services between appointments"
+    description: "Maintain your perfect look with unlimited mini touch-ups between appointments"
   },
   {
     icon: Users,
-    title: "Member Events",
-    description: "Access to exclusive seasonal events and master classes"
+    title: "Exclusive Events",
+    description: "Join intimate masterclasses, preview new services, and attend VIP-only social gatherings"
   },
   {
     icon: Gift,
-    title: "Seasonal Gifts",
-    description: "Receive curated luxury beauty products throughout the year"
+    title: "Luxury Gifts",
+    description: "Receive hand-selected premium beauty products and surprise luxury items quarterly"
   },
   {
     icon: Cake,
-    title: "Birthday Specials",
-    description: "Celebrate with exclusive treatments during your birthday month"
+    title: "Birthday Month Luxuries",
+    description: "Enjoy a complimentary signature treatment and special perks throughout your birthday month"
   },
   {
     icon: Crown,
-    title: "VIP Rewards",
-    description: "Earn points on every visit to redeem for premium services and products"
+    title: "Elite Rewards",
+    description: "Earn enhanced points and unlock exclusive treatments available only to members"
   },
 ]
 
@@ -68,7 +68,7 @@ export function Membership() {
             <div className="w-24 h-0.5 bg-primary mx-auto mb-8" />
 
             <p className="text-muted-foreground font-nunito max-w-2xl mx-auto text-lg leading-relaxed">
-              Join our exclusive circle of distinguished clients and elevate your beauty journey with premium benefits designed for the discerning individual.
+              Enter an exclusive world of beauty privileges. Our carefully curated membership delivers unprecedented access to luxury treatments, priority services, and bespoke experiences.
             </p>
           </motion.div>
         </div>
@@ -118,24 +118,26 @@ export function Membership() {
           
           <div className="space-y-8">
             <h3 className="font-cormorant text-4xl md:text-5xl leading-tight">
-              Experience Beauty<br />Without Boundaries
+              Elevate Your Beauty Journey<br />to Extraordinary Heights
             </h3>
             <p className="text-muted-foreground/90 text-lg leading-relaxed">
-              Our membership program is thoughtfully crafted to provide you with an unparalleled beauty journey. Enjoy exclusive access to premium services, special events, and luxurious surprises throughout the year.
+              Join Vancouver's most distinguished beauty membership. Immerse yourself in a world of priority access, exclusive events, and personalized luxury experiences crafted specifically for our elite members.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white font-medium tracking-wide transition-all duration-300 hover:shadow-lg hover:shadow-primary/20"
+                onClick={() => window.location.href = 'https://www.hightidedigital.ca'}
               >
-                Join the LUMIÈRE Circle
+                Begin Your Membership Journey
               </Button>
               <Button 
                 variant="outline" 
                 size="lg" 
                 className="border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300"
+                onClick={() => window.location.href = 'https://www.hightidedigital.ca'}
               >
-                Learn More
+                Explore Member Benefits
               </Button>
             </div>
           </div>

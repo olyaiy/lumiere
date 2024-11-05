@@ -41,7 +41,7 @@ export function Experience() {
   ];
 
   return (
-    <section className="w-full bg-background py-20">
+    <section className="w-full bg-background pb-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="font-cormorant text-4xl md:text-5xl lg:text-6xl text-foreground mb-6">

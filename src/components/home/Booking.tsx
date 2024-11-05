@@ -22,6 +22,7 @@ import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { artists } from "@/components/home/Artists";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 interface TimeSlot {
   hour: number;
@@ -59,15 +60,21 @@ export function Booking() {
       <div className="container mx-auto px-4 max-w-7xl">
 
         {/* Title */}
-        <div className="text-center mb-12">
-          <h2 className="font-cormorant text-4xl md:text-5xl text-soft-black mb-3">
-            Book Your Experience
-          </h2>
-          <div className="w-32 h-[1px] bg-primary mx-auto mt-8 mb-4" />
+        <div className="text-center mb-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-cormorant text-5xl md:text-6xl lg:text-7xl mb-8 tracking-tight">
+              Book Your Experience
+            </h2>
+            <div className="w-24 h-0.5 bg-primary mx-auto mb-8" />
 
-          <p className="font-nunito text-deep-navy max-w-2xl mx-auto">
-            Transform your beauty routine into a luxury experience.
-          </p>
+            <p className="text-muted-foreground font-nunito max-w-2xl mx-auto text-lg leading-relaxed">
+              Transform your beauty routine into a luxury experience.
+            </p>
+          </motion.div>
         </div>
 
         {/* Booking Form */}    
